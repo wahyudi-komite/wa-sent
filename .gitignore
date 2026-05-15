@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+dist/
+
+# Environment
+.env
+
+# WhatsApp sessions (SENSITIF!)
+wa-sessions/
+
+# Screenshots
+screenshots/
+
+# Logs
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

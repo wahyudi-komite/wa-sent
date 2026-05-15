@@ -1,0 +1,55 @@
+========================================================
+🚀 WA-SENT : DEPLOYMENT GUIDE (WINDOWS SERVER)
+========================================================
+Server  : P2-PED08715D
+Path    : D:\App\andon_ganteng
+User    : wahyudi.komite / dedi.iswahyudi
+
+--------------------------------------------------------
+1. PERSIAPAN DI LOKAL (BUILD)
+--------------------------------------------------------
+# Pastikan code sudah di-build menjadi folder 'dist'
+npm run build
+
+--------------------------------------------------------
+2. TRANSFER FILE KE SERVER (SCP)
+--------------------------------------------------------
+# A. Transfer Hasil Build (Wajib setiap update code)
+scp -r dist wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
+
+# B. Transfer Config & PM2 (Jika ada perubahan)
+scp ecosystem.config.cjs wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
+scp .env wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
+
+# C. Transfer Dependency Info (Jika tambah library baru)
+scp package.json wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
+scp package-lock.json wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
+
+--------------------------------------------------------
+3. OPERASIONAL DI SERVER (SSH)
+--------------------------------------------------------
+ssh wahyudi.komite@p2-ped08715d
+
+# Pindah ke folder aplikasi
+cd D:\App\andon_ganteng
+
+# A. Update Library (Hanya jika package.json berubah)
+npm install --production
+
+# B. Restart/Start Aplikasi dengan PM2
+# Menggunakan file config agar settings (memory, cron, dll) teraplikasi
+pm2 restart ecosystem.config.cjs
+
+# Jika aplikasi belum pernah jalan (pertama kali):
+pm2 start ecosystem.config.cjs
+
+# C. Monitoring
+pm2 status
+pm2 logs wa-sent
+
+--------------------------------------------------------
+⚠️ PENTING:
+- Jangan hapus folder 'wa-sessions' di server agar login 
+  WhatsApp tetap tersimpan (tidak perlu scan QR ulang).
+- File '.env' di server berisi konfigurasi production.
+--------------------------------------------------------

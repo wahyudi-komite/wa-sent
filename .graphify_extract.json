@@ -1,0 +1,697 @@
+{
+  "nodes": [
+    {
+      "id": "eslint_config_mjs",
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_controller_spec_ts",
+      "label": "app.controller.spec.ts",
+      "file_type": "code",
+      "source_file": "src\\app.controller.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_controller_ts",
+      "label": "app.controller.ts",
+      "file_type": "code",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_controller_appcontroller",
+      "label": "AppController",
+      "file_type": "code",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_app_controller_appcontroller_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_app_controller_appcontroller_gethello",
+      "label": ".getHello()",
+      "file_type": "code",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_app_module_ts",
+      "label": "app.module.ts",
+      "file_type": "code",
+      "source_file": "src\\app.module.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_module_appmodule",
+      "label": "AppModule",
+      "file_type": "code",
+      "source_file": "src\\app.module.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_app_service_ts",
+      "label": "app.service.ts",
+      "file_type": "code",
+      "source_file": "src\\app.service.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_service_appservice",
+      "label": "AppService",
+      "file_type": "code",
+      "source_file": "src\\app.service.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_app_service_appservice_gethello",
+      "label": ".getHello()",
+      "file_type": "code",
+      "source_file": "src\\app.service.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_main_ts",
+      "label": "main.ts",
+      "file_type": "code",
+      "source_file": "src\\main.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_main_bootstrap",
+      "label": "bootstrap()",
+      "file_type": "code",
+      "source_file": "src\\main.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "test_app_e2e_spec_ts",
+      "label": "app.e2e-spec.ts",
+      "file_type": "code",
+      "source_file": "test\\app.e2e-spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme_nestjs",
+      "label": "NestJS Framework",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 8,
+      "source_url": "https://nestjs.com",
+      "captured_at": null,
+      "author": "Kamil My\u00c5\u203aliwiec",
+      "contributor": null
+    },
+    {
+      "id": "readme_nodejs",
+      "label": "Node.js",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 8,
+      "source_url": "http://nodejs.org",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_typescript",
+      "label": "TypeScript",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 26,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_npm",
+      "label": "NPM",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 10,
+      "source_url": "https://www.npmjs.com/~nestjscore",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_circleci",
+      "label": "CircleCI",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 5,
+      "source_url": "https://circleci.com/gh/nestjs/nest",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_discord",
+      "label": "Discord",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 14,
+      "source_url": "https://discord.gg/G7Qnnhy",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_opencollective",
+      "label": "Open Collective",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 15,
+      "source_url": "https://opencollective.com/nest",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_paypal",
+      "label": "PayPal",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 17,
+      "source_url": "https://paypal.me/kamilmysliwiec",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_twitter",
+      "label": "Twitter/X",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 19,
+      "source_url": "https://twitter.com/nestframework",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_linkedin",
+      "label": "LinkedIn",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 83,
+      "source_url": "https://linkedin.com/company/nestjs",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_kamilmysliwiec",
+      "label": "Kamil My\u00c5\u203aliwiec",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 92,
+      "source_url": "https://twitter.com/kammysliwiec",
+      "captured_at": null,
+      "author": "Kamil My\u00c5\u203aliwiec",
+      "contributor": null
+    },
+    {
+      "id": "readme_nestjs_docs",
+      "label": "NestJS Documentation",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 77,
+      "source_url": "https://docs.nestjs.com",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_nestjs_mau",
+      "label": "NestJS Mau",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 64,
+      "source_url": "https://mau.nestjs.com",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_aws",
+      "label": "AWS",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 64,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_nestjs_devtools",
+      "label": "NestJS Devtools",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 81,
+      "source_url": "https://devtools.nestjs.com",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_mit_license",
+      "label": "MIT License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 98,
+      "source_url": "https://github.com/nestjs/nest/blob/master/LICENSE",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_github",
+      "label": "GitHub",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": 26,
+      "source_url": "https://github.com/nestjs/nest",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "eslint_config_mjs",
+      "target": "js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config_mjs",
+      "target": "recommended",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config_mjs",
+      "target": "globals",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config_mjs",
+      "target": "typescript_eslint",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_spec_ts",
+      "target": "testing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_spec_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_controller",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.spec.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_spec_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_ts",
+      "target": "src_app_controller_appcontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_appcontroller",
+      "target": "src_app_controller_appcontroller_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_controller_appcontroller",
+      "target": "src_app_controller_appcontroller_gethello",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.controller.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_module_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.module.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_module_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_controller",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.module.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_module_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.module.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_module_ts",
+      "target": "src_app_module_appmodule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.module.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_service_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.service.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_service_ts",
+      "target": "src_app_service_appservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.service.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_service_appservice",
+      "target": "src_app_service_appservice_gethello",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\app.service.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_ts",
+      "target": "core",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_module",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_ts",
+      "target": "src_main_bootstrap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_app_e2e_spec_ts",
+      "target": "testing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "test\\app.e2e-spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_app_e2e_spec_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "test\\app.e2e-spec.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_app_e2e_spec_ts",
+      "target": "supertest",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "test\\app.e2e-spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "test_app_e2e_spec_ts",
+      "target": "types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "test\\app.e2e-spec.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_app_e2e_spec_ts",
+      "target": "e_nest_2026_05_mei_2026_wa_sent_src_app_module",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "test\\app.e2e-spec.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_nodejs",
+      "relation": "built_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 8,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_typescript",
+      "relation": "uses_language",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 26,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_npm",
+      "relation": "publishes_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 10,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_circleci",
+      "relation": "uses_for_ci",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 5,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_discord",
+      "relation": "has_community_channel",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 14,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_opencollective",
+      "relation": "accepts_sponsors",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 15,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_paypal",
+      "relation": "accepts_donations",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 17,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_twitter",
+      "relation": "has_social_media",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 19,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_linkedin",
+      "relation": "has_social_media",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 83,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_kamilmysliwiec",
+      "relation": "authored_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 92,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_nestjs_docs",
+      "relation": "has_documentation",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 77,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_nestjs_mau",
+      "relation": "has_deployment_platform",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 64,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs_mau",
+      "target": "readme_aws",
+      "relation": "deploys_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 64,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_nestjs_devtools",
+      "relation": "has_devtools",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 81,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_mit_license",
+      "relation": "licensed_under",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 98,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_nestjs",
+      "target": "readme_github",
+      "relation": "source_code_hosted_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": 26,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
