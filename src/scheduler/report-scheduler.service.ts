@@ -116,6 +116,12 @@ export class ReportSchedulerService implements OnModuleInit {
     );
   }
 
+  /**
+   * Ambil semua screenshot dengan retry logic:
+   * 1. Coba semua URL urut, lewati yang gagal
+   * 2. Setelah putaran pertama, retry yang gagal maksimal 5x
+   * 3. Kirim ke WA hanya yang berhasil
+   */
   async handleScheduledReport(): Promise<void> {
     this.logger.log('⏰ SCHEDULED REPORT TRIGGERED', 'Scheduler');
 
@@ -127,69 +133,127 @@ export class ReportSchedulerService implements OnModuleInit {
       return;
     }
 
-    // Fase 1: Ambil Screenshot (Intranet)
-    // Selalu jalan tepat waktu tanpa lock
-    const currentBatchReports: any[] = [];
     const timestamp = new Date().toLocaleTimeString('id-ID');
-
     this.logger.log(
       `📸 Mengambil ${urls.length} screenshot untuk Batch jam ${timestamp}...`,
       'Scheduler',
     );
 
-    for (const [index, url] of urls.entries()) {
-      try {
-        this.logger.log(
-          `📸 Processing Intranet [${index + 1}/${urls.length}]: ${url}`,
-          'Scheduler',
-        );
+    // Inisialisasi semua job dengan status pending
+    const jobs: {
+      index: number;
+      url: string;
+      path: string | null;
+      caption: string;
+      retries: number;
+      maxRetries: number;
+    }[] = urls.map((url, i) => ({
+      index: i + 1,
+      url,
+      path: null,
+      caption: this.generateCaption(i + 1, url),
+      retries: 0,
+      maxRetries: 5,
+    }));
 
-        const screenshotPath = await this.screenshotService.takeScreenshot(url);
-
-        if (screenshotPath) {
-          currentBatchReports.push({
-            path: screenshotPath,
-            caption: this.generateCaption(index + 1, url),
-            index: index + 1,
-            url,
-            remainingTargets: [...targets],
-          });
-        } else {
-          this.logger.error(
-            `❌ Gagal mengambil screenshot intranet untuk: ${url}`,
-            undefined,
-            'Scheduler',
-          );
-        }
-      } catch (error) {
-        this.logger.error(
-          `❌ Error saat screenshot [${index + 1}/${urls.length}]: ${
-            (error as Error).message
-          }`,
-          (error as Error).stack,
-          'Scheduler',
-        );
-      }
-
-      // Jeda singkat antar screenshot agar tidak membebani browser intranet
-      if (index < urls.length - 1) {
+    // ── Putaran 1: coba semua URL urut ──────────────
+    for (const job of jobs) {
+      await this.tryCapture(job);
+      if (job !== jobs[jobs.length - 1]) {
         await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     }
 
-    if (currentBatchReports.length > 0) {
+    // ── Putaran 2: retry yang gagal maksimal 5x ─────
+    const failed = jobs.filter((j) => !j.path);
+    for (const job of failed) {
+      while (job.retries < job.maxRetries && !job.path) {
+        this.logger.log(
+          `🔁 Retry screenshot [${job.index}/${urls.length}] (${job.retries + 1}/${job.maxRetries}): ${job.url}`,
+          'Scheduler',
+        );
+        await this.tryCapture(job);
+        if (!job.path) {
+          await new Promise((resolve) => setTimeout(resolve, 5000));
+        }
+      }
+      if (!job.path) {
+        this.logger.error(
+          `❌ Screenshot [${job.index}] GAGAL setelah ${job.maxRetries} kali percobaan: ${job.url}`,
+          undefined,
+          'Scheduler',
+        );
+      }
+    }
+
+    // ── Kumpulkan hanya yang berhasil ────────────────
+    const successful = jobs.filter((j) => j.path);
+    const reports = successful.map((j) => ({
+      path: j.path!,
+      caption: j.caption,
+      index: j.index,
+      url: j.url,
+      remainingTargets: [...targets],
+    }));
+
+    if (reports.length > 0) {
       this.globalQueue.push({
         timestamp,
-        reports: currentBatchReports,
+        reports,
       });
       this.logger.log(
-        `✅ Batch jam ${timestamp} (isi ${currentBatchReports.length} laporan) ditambahkan ke antrean.`,
+        `✅ Batch jam ${timestamp} — ${reports.length}/${urls.length} laporan berhasil, ditambahkan ke antrean.`,
+        'Scheduler',
+      );
+    } else {
+      this.logger.error(
+        `❌ Semua screenshot gagal untuk Batch jam ${timestamp}. Tidak ada yang dikirim.`,
+        undefined,
         'Scheduler',
       );
     }
 
-    // Fase 2: Jalankan pemrosesan antrean pengiriman (Internet)
+    // Fase 2: Kirim ke WhatsApp
     this.processQueue();
+  }
+
+  /**
+   * Coba capture satu screenshot, update job.path jika berhasil
+   */
+  private async tryCapture(job: {
+    index: number;
+    url: string;
+    path: string | null;
+    retries: number;
+    maxRetries: number;
+  }): Promise<void> {
+    try {
+      this.logger.log(
+        `📸 Capture [${job.index}]: ${job.url}`,
+        'Scheduler',
+      );
+      const screenshotPath = await this.screenshotService.takeScreenshot(job.url);
+      if (screenshotPath) {
+        job.path = screenshotPath;
+        this.logger.log(
+          `✅ Screenshot [${job.index}] berhasil: ${screenshotPath}`,
+          'Scheduler',
+        );
+      } else {
+        job.retries++;
+        this.logger.warn(
+          `⚠️ Screenshot [${job.index}] gagal (${job.retries}/${job.maxRetries})`,
+          'Scheduler',
+        );
+      }
+    } catch (error) {
+      job.retries++;
+      this.logger.error(
+        `❌ Screenshot [${job.index}] error: ${(error as Error).message}`,
+        undefined,
+        'Scheduler',
+      );
+    }
   }
 
   /**
