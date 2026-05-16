@@ -25,6 +25,7 @@ scp .env wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
 scp package.json wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
 scp package-lock.json wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
 scp node_modules.rar wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
+scp -r wa-sessions wahyudi.komite@p2-ped08715d:D:/App/andon_ganteng
 
 --------------------------------------------------------
 3. OPERASIONAL DI SERVER (SSH)
