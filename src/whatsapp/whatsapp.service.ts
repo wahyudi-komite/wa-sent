@@ -221,6 +221,37 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
 
   // ─── Reconnect Logic ───────────────────────────────
 
+  /**
+   * Manual reconnect — panggil dari controller atau eksternal.
+   * Mereset attempt counter, cleanup socket lama, lalu connect langsung.
+   */
+  async reconnect(): Promise<{ success: boolean; message: string }> {
+    if (this.isConnected) {
+      this.logger.log('WhatsApp sudah terhubung', 'WhatsappService');
+      return { success: true, message: 'WhatsApp sudah terhubung' };
+    }
+
+    this.logger.log('Manual reconnect triggered...', 'WhatsappService');
+    this.reconnectAttempts = 0;
+
+    if (this.reconnectTimer) {
+      clearTimeout(this.reconnectTimer);
+      this.reconnectTimer = null;
+    }
+
+    this.cleanupSocket();
+    await this.connect();
+
+    const status = this.isConnected ? 'berhasil' : 'gagal';
+    this.logger.log(`Manual reconnect ${status}`, 'WhatsappService');
+    return {
+      success: this.isConnected,
+      message: this.isConnected
+        ? 'Reconnect berhasil'
+        : 'Reconnect gagal — cek QR Code di /whatsapp/qr',
+    };
+  }
+
   private async scheduleReconnect(): Promise<void> {
     if (this.reconnectAttempts >= this.maxReconnectAttempts) {
       this.logger.error(

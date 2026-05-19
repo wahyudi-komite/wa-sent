@@ -61,6 +61,8 @@ CRON_SCHEDULE=06:55, 11:50, 19:55, 00:01
 | :--- | :--- | :--- |
 | **GET** | `/whatsapp/status` | Cek koneksi WhatsApp & antrean |
 | **GET** | `/whatsapp/qr` | **Lihat QR Code login di browser** |
+| **GET** | `/whatsapp/reconnect` | **Halaman tombol reconnect manual** |
+| **POST** | `/whatsapp/reconnect` | API reconnect manual (return JSON) |
 | **POST** | `/whatsapp/logout` | Logout dan hapus session |
 | **GET** | `/scheduler/trigger` | Trigger screenshot manual sekarang juga |
 | **GET** | `/health` | Status kesehatan aplikasi & memory |
@@ -87,7 +89,24 @@ pm2 start ecosystem.config.cjs
 3. Scan QR menggunakan WhatsApp di HP Anda.
 4. Setelah terhubung, file `whatsapp-qr.png` akan terhapus otomatis.
 
-### 3. Monitoring
+### 3. Reconnect Manual
+
+Jika auto-reconnect gagal setelah 10 percobaan (exponential backoff 5s→60s), lakukan reconnect manual:
+
+Jika koneksi WhatsApp terputus dan auto-reconnect sudah habis (10 kali percobaan), reconnect manual tanpa restart aplikasi:
+
+1. Buka browser: `http://localhost:3100/whatsapp/reconnect`
+2. Klik tombol **🔄 Reconnect Sekarang**
+3. Halaman akan menampilkan status berhasil/gagal
+4. Jika reconnect membutuhkan scan ulang QR, buka `/whatsapp/qr`
+
+Atau via curl/script:
+```bash
+curl -X POST http://localhost:3100/whatsapp/reconnect
+# Response: { "success": true, "message": "Reconnect berhasil", "timestamp": "..." }
+```
+
+### 4. Monitoring
 Cek log secara real-time untuk melihat proses antrean dan pengiriman:
 ```bash
 pm2 logs wa-sent
